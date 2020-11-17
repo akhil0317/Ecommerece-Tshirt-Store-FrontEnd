@@ -67,7 +67,7 @@ const makeCartEmpty = () =>
                 )}
             </div>   
             <div className =  "col-6">
-            {user ? (
+            {user  ? (
                      <Paymentb products = {products} setReload = {setReload}/>
             ) : (
                 <div>
@@ -77,8 +77,13 @@ const makeCartEmpty = () =>
             )} 
                 </div>         
             
-                    {reload && <SuccessDisplay products = {products}></SuccessDisplay>}
-                    {reload && makeCartEmpty()}
+                    {/* {reload  && localStorage.getItem("payment") &&( <div>
+                        <SuccessDisplay products = {products}></SuccessDisplay>
+                        {reload && makeCartEmpty()}
+                        </div>
+                    )} */}
+                  
+                   
            </div>
         </Base>
     )

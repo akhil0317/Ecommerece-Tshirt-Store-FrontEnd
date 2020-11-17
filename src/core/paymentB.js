@@ -48,6 +48,7 @@ const Paymentb = ({products,setReload= f=>f ,reload = undefined}) => {
                 .then(info=>{
                     console.log("information",info);
                     if(info.error){
+                        
                         setInfo({...info,error:info.error})
                     }
                     else{
@@ -86,6 +87,7 @@ const Paymentb = ({products,setReload= f=>f ,reload = undefined}) => {
                         transaction_id :response.transaction.id,
                         amount:response.transaction.amount
                     }
+                    localStorage.setItem("payment",JSON.stringify(response.transaction_id))
                     createOrder(userId,token,orderData)
                     .then(data=>{
                         if(data.error){
